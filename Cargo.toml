@@ -1,0 +1,20 @@
+[package]
+name = "nimbus-infer-rs"
+version = "0.1.0"
+edition = "2021"
+description = "A from-scratch, std-only LLM inference engine in Rust: byte-level BPE, KV cache, GPT-2 + LLaMA, hand-written AVX2/FMA kernels, int8/int4 quantization. Reads nimbus-infer checkpoints."
+license = "MIT"
+
+[lib]
+name = "nimbus_infer_rs"
+path = "src/lib.rs"
+
+[[bin]]
+name = "nimbus-rs"
+path = "src/main.rs"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"

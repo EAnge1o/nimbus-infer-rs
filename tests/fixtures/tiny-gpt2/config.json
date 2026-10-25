@@ -1,0 +1,18 @@
+{
+  "vocab_size": 448,
+  "n_layers": 4,
+  "n_heads": 4,
+  "d_model": 128,
+  "d_mlp": 512,
+  "max_seq_len": 256,
+  "head_dim": null,
+  "n_kv_heads": null,
+  "norm": "layernorm",
+  "activation": "gelu",
+  "pos_encoding": "learned",
+  "tie_embeddings": true,
+  "rope_theta": 10000.0,
+  "norm_eps": 1e-05,
+  "scale_attn_by_head_dim": true,
+  "name": "tiny-gpt2"
+}
