@@ -27,7 +27,7 @@ import numpy as np  # noqa: E402
 from nimbus_infer import BPETokenizer, Engine, ModelConfig, SamplingParams  # noqa: E402
 
 FIXTURE = ROOT / "tests" / "fixtures" / "tiny-gpt2"
-RS_BIN = ROOT / "target" / "release" / "nimbus-rs.exe"
+RS_BIN = ROOT / "target" / "release" / ("nimbus-rs.exe" if os.name == "nt" else "nimbus-rs")
 
 PROMPT = "the engine caches keys and values"
 
