@@ -11,6 +11,10 @@
 
 它直接读取 nimbus-infer 的 checkpoint（`config.json` + `weights.safetensors` + `tokenizer/`），同一份模型文件在两个引擎里跑出**逐 token 一致**的贪心生成结果。
 
+![nimbus-infer-rs: gpt2-124M in fp32 / int8 / int4, rendered from real command output](docs/demo.svg)
+
+*（截图由 `docs/make_demo_svg.py` 用真实命令输出渲染而成，不是摆拍。int8 与 fp32 输出接近、int4 有漂移但保持连贯——这与基准部分的量化误差讨论一致。）*
+
 ## 基准结果
 
 三个真实 checkpoint，同一台机器，同一协议（128 token prefill + 64 token 贪心 decode，3 轮取最优）：
